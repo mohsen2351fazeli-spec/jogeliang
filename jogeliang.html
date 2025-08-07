@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./jogeliang.css"> -->
+    <style>
+        html{
+    font-size: 100%;
+}
+*{
+    margin: 0;
+    padding:0;
+}
+.navbar{
+    background-color: rgb(7, 170, 148);
+    height: 3rem;
+    padding: .5rem;
+    margin-bottom: .5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.t{
+    font-size: 2rem;
+    text-shadow: 2px 1.3px rgba(0, 0, 0, 0.5);
+}
+.m{
+    font-size: 1.3rem;
+}
+.personsnavbar{
+    background-color: rgb(14, 202, 30);
+    height: 2rem;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.persons{
+    border-radius: .4rem;
+    border-color:rgba(231, 208, 0,.5) ;
+    background-color: rgb(231, 208, 0);
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .2rem;
+}
+.general{
+    background-color:rgb(199, 66, 5);
+    height: 15rem;
+    padding: .6rem;
+    display: flex;
+    align-items: center;
+}
+.picture{
+    width: 100%;
+    height: 100%;
+    background-image: url("./download3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: .6rem;
+    margin-left: .5rem;
+}
+.l{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+audio{
+    align-self: center;
+    width: 100%;
+    max-width: 20rem;
+}
+
+    </style>
+    <title>JOGELIANG</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="t">THREE KINGDOMS</div>
+        <div class="m">mohsen fazeli</div>
+    </div>
+    <div class="personsnavbar">
+        <button class="persons j">JOGE LIANG</button>
+        <button class="persons l">LIU BEY</button>
+        <button class="persons c">CAO CAO</button>
+        <button class="persons s">SUN KUAN</button>
+    </div>
+    <div dir="rtl" class="general">
+        <div class="picture"></div>
+        <div class="l">
+            <div class="matn">
+            استراتژیست افسانه ای دوران سه پادشاهی. مشاور ارشد و وفادار لیوبی پدشاه شو. به دلیل نبوغ بالا به اژدهای خفته معروف بود. نقش کلیدی در نبرد صخره سرخ داشت. باسیاست و دیپلماسی های دقیق شناخته می شود.نماد وفاداری،خردو مسئولیت پذیری در فرهنگ چین است تا پایان عمر برای بقای شو تلاش کرد. 
+
+            </div>
+            <audio controls src="./jm.mp3"></audio>
+        </div>
+    </div>
+
+    <!-- <script  src="./jogeliang.js"></script> -->
+    <script>
+        const data={
+    pictures:{
+        jogeliang:"./download3.jpg",
+        liubey:"./download1.jpg",
+        caocao:"./download.jpg",
+        sunkuan:"./download2.jpg"
+    },
+    matns:{
+        jogeliang:"استراتژیست افسانه ای دوران سه پادشاهی. مشاور ارشد و وفادار لیوبی پدشاه شو. به دلیل نبوغ بالا به اژدهای خفته معروف بود. نقش کلیدی در نبرد صخره سرخ داشت. باسیاست و دیپلماسی های دقیق شناخته می شود.نماد وفاداری،خردو مسئولیت پذیری در فرهنگ چین است تا پایان عمر برای بقای شو تلاش کرد. ",
+        liubey:"بنیان گذار پادشاهی شو در دوران سه پادشاهی. ادعا می کرد از خاندان سلطنتی هان است. به مهربانی، عدالت خواهی و انسان دوستی معروف بود. با کمک ژوگه لیانگ و برادرانش به قدرت رسید. در زمان هرج و مرج به دنبال احیای نظم و اخلاق بود. با وجود ضعف نظامی با حمایت مردم رشد کرد.",
+        caocao:"فرمانده شاعر و سیاست مداری قدرتمند در چین باستان. پایه گذار پادشاهی وی و یکی از مهره های کلیدی سه پادشاهی. باذکاوت، بی رحمی قدرت طلبی شناخته می شود. شخصیتی پیچیده، هم مورد احترام و هم مورد انتقاد دارد.",
+        sunkuan:"فرمانروای پادشاهی وو در جنوب چین بود. پس از مرگپدر و برادرش قدرت را به دست گرفت. رهبری باهوش، خویشتندار و واقع گرا بود. تحت فرمانروایی او وو به قدرتی پایدار تبدیل شد."
+    },
+    music:{
+        jogeliang:"./jm.mp3",
+        liubey:"./lm.mp3",
+        caocao:"./cm.mp3",
+        sunkuan:"./sm.mp3"
+    }
+}
+
+const jogeliangbtn=document.querySelector(".j");
+const liubeybtn=document.querySelector(".l");
+const caocaobtn=document.querySelector(".c");
+const sunkuanbtn=document.querySelector(".s");
+const picture=document.querySelector(".picture");
+const matn=document.querySelector(".matn");
+const audio=document.querySelector("audio")
+
+jogeliangbtn.addEventListener("click",()=>{
+    picture.style.backgroundImage=`url(${data.pictures.jogeliang})`
+    matn.innerHTML=data.matns.jogeliang;
+    audio.src=data.music.jogeliang;
+    audio.play()
+})
+caocaobtn.addEventListener("click",()=>{
+    picture.style.backgroundImage=`url(${data.pictures.caocao})`
+    matn.innerHTML=data.matns.caocao;
+    audio.src=data.music.caocao;
+    audio.play()
+})
+liubeybtn.addEventListener("click",()=>{
+    picture.style.backgroundImage=`url(${data.pictures.liubey})`
+    matn.innerHTML=data.matns.liubey;
+    audio.src=data.music.liubey;
+    audio.play()
+})
+sunkuanbtn.addEventListener("click",()=>{
+    picture.style.backgroundImage=`url(${data.pictures.sunkuan})`
+    matn.innerHTML=data.matns.sunkuan;
+    audio.src=data.music.sunkuan;
+    audio.play()
+})
+    </script>
+</body>
+</html>
